@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Jomhuria&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/register.css">
+    <title>Registration</title>
+</head>
+<body>
+    
+    <!-- starting landing section -->
+    <section class="landing">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1><a href="index.html">Burger<span> King</span></a></h1>
+                </div>
+                <i class="fa-solid fa-bars" id="dropi"></i>
+                <ul id="dropul">
+                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="feature.html">Feature</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="register.html" class="active">Registration</a></li>
+                </ul>
+            </nav>
+       
+        </div>
+        <div class="content">
+       <h2>Contact Us & Registration</h2>
+       <p><a href="index.html">HOME</a><span> / </span>REGISTRATION</p>
+        </div>
+    </section>
+    <!-- ending landing section -->
+  
+    
+    
+    <!-- starting js section -->
+  
+    <!-- ending js section -->
+    <section class="blog">
+        
+    </section>
+    <!-- ending team section -->
+    
+    <!-- starting contact section -->
+    <section class="contact">
+        <div class="container">
+            <div class="header">
+                <p class="innerp">Contact Us</p>
+                <h2>Contact For Any Query</h2>
+            </div>
+            <div class="content">
+                <div class="box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <p>Address</p>
+                        <span>123 Street, NY, USA</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <p>Call Us</p>
+                        <span>+012 345 6789</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <p>Email Us</p>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-share"></i>
+                    <div>
+                        <p>Follow Us</p>
+                        <span><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-youtube"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-linkedin-in"></i></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="register">
+        <div class="container">
+            <div class="header">
+                <p class="innerp">Join Us</p>
+                <h2>Registration</h2>
+            </div>
+           
+        </div>
+        <div class="parent">
+        <div class="content">
+            <form action="#" method="post" id="form">
+                <div class="firstname" >
+                    <input type="text" name="firstname" placeholder="First Name" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="lastname">
+                    <input type="text" name="lastname" placeholder="Last Name" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="email">
+                    <input type="email" name="mail" placeholder="Email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                 <div class="mobile">
+                     <input type="text" name="phonenumber" placeholder="Mobile" required id="phone">
+                     <i class="fa-solid fa-phone"></i>
+                 </div>
+                <div id="phonediv" style="border: none; margin: 0; display: block; color: red;"></div>
+
+                 <div class="address">
+                     <input type="text" name="address" placeholder="Address" required>
+                     <i class="fa-solid fa-location-dot"></i>
+                 </div>
+                 <div >
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div id="passworddiv" style="border: none; margin: 0; display: block; color: red;"></div>
+
+                 <div class="menu">
+                     <select name="gender" required>
+                         <option>Male</option>
+                         <option>Female</option>
+                     </select>
+                 </div>
+                  <input type="submit" name="sub" value="Register">
+            </form>
+        </div>
+    </div>
+    </section>
+  
+    <!-- ending contact section -->
+    <!-- starting footer section -->
+    <footer >
+        <div class="container">
+            <div class="content">
+                <div>
+                    <h2>Our Address</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i>123 Street, New York, USA</li>
+                        <li><i class="fa-solid fa-phone"></i>+012 345 67890</li>
+                        <li><i class="fa-solid fa-envelope"></i>info@example.com</li>
+                    </ul>
+                    <span><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-youtube"></i><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-linkedin-in"></i></span>
+                </div>
+                <div>
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-angle-right"></i><a href="index.html">Home</a></li>
+                       <li><i class="fa-solid fa-angle-right"></i><a href="about.html">About</a></li>
+                       <li><i class="fa-solid fa-angle-right"></i><a href="feature.html">Feature</a></li>
+                       <li><i class="fa-solid fa-angle-right"></i><a href="menu.html">Menu</a></li>
+                       <li><i class="fa-solid fa-angle-right"></i><a href="register.html">Registration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Newsletter</h2>
+                 <p>Lorem ipsum dolor sit amet elit. Quisque eu lectus a leo dictum nec non quam. Tortor eu placerat rhoncus, lorem quam iaculis felis, sed lacus neque id eros.</p>
+                <form method="get" action="#">
+                    <input type="email" name="email" placeholder="Email goes here">
+                    <input type="submit" value="Submit">
+
+                </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="ending">
+        <p>&copy; <a href="index.html">Burger King</a>, All Right Reserved. </p>
+    </section>
+    <!-- ending footer section -->
+    <script src="js/register.js"></script>
+</body>
+</html>
