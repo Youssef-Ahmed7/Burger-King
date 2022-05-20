@@ -91,6 +91,7 @@ section.landing{
   position: relative;
  min-height: 60vh;
 }
+
 section.landing:after{
 
   content: "";
@@ -195,9 +196,13 @@ section.landing .content h2 +p a:hover{
   section.landing .container nav i{
     display: block;
     font-size: 35px;
-    color: white;
+    color: var(--orange);
     cursor: pointer;
+    transition: 0.3s;
 
+  }
+  section.landing .container nav i:hover{
+    color: var(--green);
   }
   section.landing .container nav ul{
     position: absolute;
@@ -206,13 +211,14 @@ section.landing .content h2 +p a:hover{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    background-color:white;
+    background-color:rgb(255 255 255 /95%);
     width:100%;
     padding: 0 0 0 15px;
     height: 0;
     overflow: hidden;
     transition: 0.5s;
     transition-timing-function: ease-out;
+    border-bottom: 1px solid var(--orange);
    
   }
   section.landing .container nav .transul{
