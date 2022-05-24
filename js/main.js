@@ -62,20 +62,23 @@ let phonediv =document.getElementById("phonediv");
 pherror.setAttribute("id" , "pherrorspan");
 pherror.textContent = "mobile number must be only 11 digits not enclude any characters";
 form.addEventListener("submit" , function(action){
+   let phonevalid = true;
+   for (let i =0 ; i < phone.value.length ; i++){
+       if (isNaN(phone.value[i]) == true)
+       phonevalid = false;
+       if (phone.value[i] == " ")
+       phonevalid = false;
+   }
+   if (phone.value.length !=11)
+   phonevalid = false;
+   if (phonevalid == false){
+       action.preventDefault();
+       phonediv.appendChild(pherror);
+       phone.onfocus = function(){
+           document.getElementById("pherrorspan").remove();
+       }
+   }
 
-    let phonevalid = true;
-    for (let i =0 ; i< phone.value.length;i++){
-        if (isNaN(phone.value[i])==true)
-        phonevalid =false;
-    }
-    if (phonevalid == false || phone.value.length !=11){
-            action.preventDefault();
-            phonediv.appendChild(pherror);
-            phone.onfocus = function (){
-            document.getElementById("pherrorspan").remove();
-            phone.value == " ";
-        }
-    }
 })
 
 

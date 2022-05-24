@@ -7,6 +7,8 @@ let form = document.getElementById("form");
 let password = document.getElementById("password");
 let passworddiv = document.getElementById("passworddiv");
 let error = document.createElement("span");
+error.setAttribute("id" , "errorspan");
+error.textContent = "The password must start with uppercase character,include 8 characters,atleast one digit,one special character";
 //************************************** */
 let phone = document.getElementById("phone");
 let pherror = document.createElement("span");
@@ -14,60 +16,70 @@ let phonediv =document.getElementById("phonediv");
 pherror.setAttribute("id" , "pherrorspan");
 pherror.textContent = "mobile number must be only 11 digits not enclude any characters";
 //****************************************
+form.addEventListener("submit" , function(submition){
+    let submitcounter =0;
+    let validpassword = true;
+    let validphone = true;
+    let digitcounter = 0;
+    let specialcounter =0
+    let phonelength =0;
 
-error.setAttribute("id" , "errorspan");
-error.textContent = "The password must start with uppercase character,include 8 characters,atleast one digit,one special character"
-form.addEventListener("submit" ,function(action){
-    let submit = 0;
-    let validP = true;
-    password = password.value.split("");
-    let numbers =0 ,  special = 0 ,whitespace =0;
-    for (let i = 0; i<password.length ; i++){
-        if (password[i]==" ")
-        whitespace++;
-       else if (isNaN(password[i]) == true){
-            if (password[i] == "-" || password[i] =="_" || password[i]=="#" || password[i]=="&" || password[i]=="*" || password[i] == "@")
-            special++;
-        }
-        else if (isNaN(password[i]) ==false){
-            numbers++;
-        }
+ if (isNaN(password.value[0])==true){
+     if (password.value[0]!= password.value[0].toUpperCase())
+     validpassword ==false;
+ }
+ if (isNaN(password.value[0]) == false){
+     validpassword ==false;
+ }
+ for (let i = 0 ; i<password.value.length ; i++){
+     if (isNaN(password.value[i]) == false)
+         digitcounter++;
+     else if (password.value[i] == "-" || password.value[i] == "_"||password.value[i] == "&"||password.value[i] == "#"||password.value[i] == "*")
+     specialcounter ++;
+    else if (password.value[i] == " ")
+    validpassword =false;
 
-        
-    }
-    let cap =0
-    if (password[0]!=password[0].toUpperCase()){
-        cap++;
-    }
-    // ***************************************************************
-    let phonevalid = true;
-    for (let i =0 ; i< phone.value.length;i++){
-        if (isNaN(phone.value[i])==true)
-        phonevalid =false;
-    }
-    //******************************************************************* */
-    if ((cap!=0 ) || (numbers == 0) ||( document.getElementById("password").value.length!=8) || (whitespace !=0) || (special >1 ||special <1 )  ){
-        validP = false;
-    }
-    if (phonevalid == false || phone.value.length !=11){
-        action.preventDefault();
-        phonediv.appendChild(pherror);
-        phone.onfocus = function (){
-            document.getElementById("pherrorspan").remove();
-            phone.value == " ";
-        }
+ }
+ if (digitcounter < 1 )
+ validpassword =false;
+ if (specialcounter !=1)
+ validpassword =false;
+ if (password.value.length != 8)
+ validpassword =false;
 
+for (let i = 0 ;i< phone.value.length ; i++){
+    phonelength++;
+    if (isNaN(phone.value[i]) ==true)
+    validphone = false;
+}
+if (phonelength !=11)
+validphone =false;
+
+console.log(phonelength);
+
+
+ if (validphone == false || validpassword == false ){
+    submition.preventDefault(); 
+     if (validpassword == false){
+        document.getElementById("passworddiv").appendChild(error);
+   if (submitcounter ==0){
+    password.onfocus = function (){
+        document.getElementById("errorspan").remove();
     }
-    if (validP ==false){
-        action.preventDefault();
-         passworddiv.appendChild(error);
-         document.getElementById("password").onfocus = function (){
-             document.getElementById("errorspan").remove();
-             document.getElementById("password").value="";
-        
+    submitcounter =1;
+    console.log(submitcounter);
+   }
+     }
+     if (validphone == false ){
+        document.getElementById("phonediv").appendChild(pherror);
+            phone.onfocus = function (){
+                document.getElementById("pherrorspan").remove();
+            submitcounter =1;
         }
-     
-    }
-  
     
+     }
+
+    }
+   
 })
+
